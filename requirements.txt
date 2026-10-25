@@ -1,0 +1,12 @@
+torch>=2.1
+torchaudio>=2.1
+soundfile
+scikit-learn
+scipy
+numpy
+pandas
+matplotlib
+pyyaml
+tqdm
+fvcore
+pytest

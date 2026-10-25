@@ -1,0 +1,16 @@
+sample_rate: 16000
+duration_seconds: 4
+n_fft: 512
+win_length: 400
+hop_length: 160
+n_mels: 64
+frames: 400
+sigma: 0.1
+lambda_grid: [0.0, 0.01, 0.1, 1.0]
+lr: 0.001
+weight_decay: 0.00001
+min_lr: 0.00001
+batch_size: 64
+max_epochs: 50
+patience: 10
+seeds: [0, 1, 2]

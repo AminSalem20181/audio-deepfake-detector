@@ -1,0 +1,26 @@
+# Local environments and Python caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Licensed/raw datasets and derived feature caches
+data/raw/
+data/cache/
+
+# Training outputs and large artifacts
+results/checkpoints/
+results/logs/
+results/figures/
+*.pt
+*.pth
+*.ckpt
+*.zip
+
+# Notebook/runtime noise
+.ipynb_checkpoints/
+
+# Local secrets and OS files
+.env
+.DS_Store

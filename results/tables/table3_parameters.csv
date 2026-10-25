@@ -1,0 +1,4 @@
+model,trainable_parameters,source
+SDE-Seg,30434,unit-test specification
+standard_conv_twin,245362,unit-test specification
+AASIST-L,85306,paper reference (not rerun)
