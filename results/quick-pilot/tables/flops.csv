@@ -1,0 +1,2 @@
+model,flops,tool,source
+SDE-Seg,60313728,fvcore; one multiply-add counts as one FLOP; unsupported operators excluded,logs/efficiency.json

@@ -28,7 +28,7 @@ class Sdeseg(nn.Module):
         self.block3 = SepBlock(64, 128)
         self.block4 = SepBlock(128, 128)
         self.pool = nn.MaxPool2d(2)
-        self.segm = nn.Conv2d(128, 1, 1, bias=True)
+        self.segm = nn.Conv2d(128, 1, 1, bias=True) if use_segm else None
         self.head = nn.Linear(128, 1, bias=True)
 
     def features(self, x: torch.Tensor) -> torch.Tensor:

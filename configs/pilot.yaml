@@ -1,0 +1,23 @@
+# User-requested compact experiment. Results describe subsets, not full benchmarks.
+experiment_kind: pilot_subset
+sample_rate: 16000
+duration_seconds: 4
+n_fft: 512
+win_length: 400
+hop_length: 160
+n_mels: 64
+frames: 400
+sigma: 0.1
+lambda_grid: [0.0, 0.01, 0.1, 1.0]
+lr: 0.001
+weight_decay: 0.00001
+min_lr: 0.00001
+batch_size: 64
+max_epochs: 8
+patience: 3
+seeds: [0, 1, 2]
+subset_seed: 2026
+train_samples: 3000
+dev_samples: 1000
+eval_samples: 1000
+explain_samples: 30

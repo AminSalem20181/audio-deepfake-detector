@@ -1,0 +1,8 @@
+{
+  "scope": "pilot_subset",
+  "positive_class": "spoof=1",
+  "threshold": 0.5,
+  "threshold_policy": "Fixed conventional threshold; not fitted or chosen using test outcomes.",
+  "source": "Previously saved final predictions; no training or audio rescoring.",
+  "variability": "Sample standard deviation across seeds 0,1,2; not a confidence interval."
+}

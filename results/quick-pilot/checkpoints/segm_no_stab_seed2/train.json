@@ -1,0 +1,142 @@
+{
+  "config": {
+    "sample_rate": 16000,
+    "duration_seconds": 4,
+    "n_fft": 512,
+    "win_length": 400,
+    "hop_length": 160,
+    "n_mels": 64,
+    "frames": 400,
+    "experiment_kind": "pilot_subset",
+    "sigma": 0.1,
+    "lambda_grid": [
+      0.0,
+      0.01,
+      0.1,
+      1.0
+    ],
+    "lr": 0.001,
+    "weight_decay": 1e-05,
+    "min_lr": 1e-05,
+    "batch_size": 64,
+    "max_epochs": 8,
+    "patience": 3,
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "subset_seed": 2026,
+    "train_samples": 3000,
+    "dev_samples": 1000,
+    "eval_samples": 1000,
+    "explain_samples": 30,
+    "variant": "segm_no_stab",
+    "seed": 2,
+    "lambda_value": 0.0,
+    "smoke": false,
+    "epochs": 8,
+    "data_root": "/content/sde-seg/data/pilot-la",
+    "workers": 2,
+    "amp": false,
+    "implementation_sha256": "84a24e44a9762157a04328eb859027ca4662f737b7d0b8e401b86e40a50eb41f",
+    "train_manifest_sha256": "813fb577bfe10544abd1059538c3a38338ea9b3df8b995cb1d9b01144562fdf1",
+    "dev_manifest_sha256": "459f82b9db15d1c1df37de3540a43ce1167f4c317cee14a0380debdd4f47ca22"
+  },
+  "versions": {
+    "python": "3.13.16",
+    "pytorch": "2.11.0+cu130",
+    "cuda": "13.0",
+    "cudnn": 92700,
+    "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+    "packages": {
+      "torchaudio": "2.11.0+cu130",
+      "numpy": "2.1.3",
+      "scipy": "1.16.3",
+      "scikit-learn": "1.6.1",
+      "soundfile": "0.14.0",
+      "pandas": "2.2.3",
+      "fvcore": "0.1.5.post20221221"
+    }
+  },
+  "device": "cuda",
+  "parameters": 30434,
+  "pos_weight": 0.11317254174397032,
+  "history": [
+    {
+      "epoch": 0,
+      "loss": 0.12481140110890071,
+      "bce": 0.12481140110890071,
+      "stability": 0.024463244105378788,
+      "dev_eer": 0.23300970873786409,
+      "seconds": 12.495103211998867
+    },
+    {
+      "epoch": 1,
+      "loss": 0.09762245245774587,
+      "bce": 0.09762245245774587,
+      "stability": 0.0238956638276577,
+      "dev_eer": 0.1583054626532887,
+      "seconds": 12.318887297000401
+    },
+    {
+      "epoch": 2,
+      "loss": 0.07361466791232427,
+      "bce": 0.07361466791232427,
+      "stability": 0.02585407613714536,
+      "dev_eer": 0.07580824972129319,
+      "seconds": 12.457324073000564
+    },
+    {
+      "epoch": 3,
+      "loss": 0.051468830078840254,
+      "bce": 0.051468830078840254,
+      "stability": 0.028197032764554025,
+      "dev_eer": 0.0423634336677815,
+      "seconds": 12.016313996000463
+    },
+    {
+      "epoch": 4,
+      "loss": 0.03993127997716268,
+      "bce": 0.03993127997716268,
+      "stability": 0.02946674807369709,
+      "dev_eer": 0.009708737864077669,
+      "seconds": 12.189373347999208
+    },
+    {
+      "epoch": 5,
+      "loss": 0.034603320449590684,
+      "bce": 0.034603320449590684,
+      "stability": 0.031167557482918103,
+      "dev_eer": 0.009708737864077669,
+      "seconds": 12.286324949000118
+    },
+    {
+      "epoch": 6,
+      "loss": 0.030375391955176988,
+      "bce": 0.030375391955176988,
+      "stability": 0.032247492810090386,
+      "dev_eer": 0.009708737864077669,
+      "seconds": 12.180652111999734
+    },
+    {
+      "epoch": 7,
+      "loss": 0.028090799768765766,
+      "bce": 0.028090799768765766,
+      "stability": 0.032872485140959425,
+      "dev_eer": 0.0078037904124860225,
+      "seconds": 12.302471287001026
+    }
+  ],
+  "best_dev_eer": 0.0078037904124860225,
+  "train_count": 3000,
+  "dev_count": 1000,
+  "train_class_counts": {
+    "0": 305,
+    "1": 2695
+  },
+  "hardware": {
+    "cpu": "x86_64",
+    "gpu": "Tesla T4"
+  }
+}

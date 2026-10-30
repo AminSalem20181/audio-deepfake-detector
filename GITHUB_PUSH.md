@@ -1,18 +1,17 @@
 # Publishing on GitHub
 
-Recommended repository name: `sde-seg-audio-deepfake-detector`.
-
-From the project directory, create an empty GitHub repository with that name, then run:
+The configured repository is `git@github.com:AminSalem20181/audio-deepfake-detector.git`, on branch `master`. For subsequent updates from this existing checkout:
 
 ```bash
-git init -b main
+.venv/bin/python -m pytest -q
+git diff --check
+git status --short
 git add .
-git commit -m "Initial SDE-Seg implementation"
-git remote add origin https://github.com/<YOUR_USERNAME>/sde-seg-audio-deepfake-detector.git
-git push -u origin main
+git commit -m "Describe the concrete change"
+git push origin master
 ```
 
-The `.gitignore` intentionally excludes raw datasets, checkpoints, feature caches, generated figures/logs, Python caches, and zip archives. Do not commit licensed audio or credentials.
+The `.gitignore` excludes raw datasets, caches, runtime/debug logs, large archives and unselected training checkpoints. It explicitly allows the nine small best-dev models in `pretrained/`, final pilot evidence, selected training histories and presentation figures. No raw dataset audio or credentials should be committed.
 
 Before publishing, run:
 
@@ -21,4 +20,4 @@ PYTHONPATH=. python -m pytest -q
 git status --short
 ```
 
-The current `REPORT.md` is intentionally honest about dataset-dependent metrics that have not been generated in this environment.
+`REPORT.md` records completed compact-pilot measurements and their limitations. `docs/PROFESSOR_BRIEF_FA.md` explains the work in Persian. To regenerate reporting metrics and plots from published predictions, run `python scripts/summarize_pilot.py`; it never retrains or scores audio. A summary's Accuracy at threshold 0.5 is distinct from EER.

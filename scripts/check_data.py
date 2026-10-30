@@ -1,38 +1,34 @@
-#!/usr/bin/env python3
+"""Strict protocol/manifest inspection. Audio errors are fatal, never skipped."""
+from __future__ import annotations
+import argparse
+from collections import Counter
 from pathlib import Path
 import soundfile as sf
-import pandas as pd
+from sdeseg.data.dataset import ProtocolDataset, manifest_dataset, assert_disjoint
+from sdeseg.utils import save_json
 
-ROOT = Path('data/raw')
 
-def inspect_audio(folder):
-    files = list(folder.rglob('*.flac')) + list(folder.rglob('*.wav'))
+def describe(dataset):
     total = 0.0
-    for p in files:
-        try:
-            total += sf.info(p).duration
-        except Exception:
-            pass
-    print(f'{folder}: files={len(files)} duration_hours={total/3600:.3f}')
+    for path, _ in dataset.rows:
+        total += sf.info(path).duration
+    return dict(files=len(dataset), labels=dict(Counter(y for _,y in dataset.rows)),
+                duration_hours=total/3600)
+
 
 def main():
-    if not ROOT.exists():
-        raise SystemExit('Missing data/raw. Download official datasets and place them according to README.md.')
-    missing=[]
-    for p in [ROOT/'LA', ROOT/'in_the_wild', ROOT/'ml_itw']:
-        if p.exists(): inspect_audio(p)
-        else: missing.append(p); print(f'MISSING {p} (required for final evaluation)')
-    for meta in ROOT.rglob('meta.csv'):
-        df = pd.read_csv(meta)
-        print(meta, 'columns=', list(df.columns))
-        for c in df.columns:
-            print(' ', c, df[c].dropna().astype(str).value_counts().head(20).to_dict())
-    la=ROOT/'LA'
-    for split in ('train','dev','eval'):
-        protocols=list(la.rglob(f'ASVspoof2019.LA.cm.{split}.*.txt')) if la.exists() else []
-        if protocols:
-            labels=[line.split()[-1] for line in protocols[0].read_text().splitlines() if line.strip()]
-            print(f'LA {split}: protocol_rows={len(labels)} labels={pd.Series(labels).value_counts().to_dict()}')
-    if missing: raise SystemExit(2)
+    ap=argparse.ArgumentParser();ap.add_argument('--data-root',default='data/raw/LA')
+    ap.add_argument('--splits',nargs='+',choices=['train','dev','eval'],default=['train','dev'])
+    ap.add_argument('--itw-manifest');ap.add_argument('--mlitw-manifest')
+    ap.add_argument('--output',default='results/logs/data_check.json')
+    a=ap.parse_args()
+    datasets={split:ProtocolDataset(a.data_root,split) for split in a.splits}
+    for name,path in [('In-The-Wild',a.itw_manifest),('ML-ITW',a.mlitw_manifest)]:
+        if path: datasets[name]=manifest_dataset(path)
+    assert_disjoint(*datasets.values())
+    result={name:describe(ds) for name,ds in datasets.items()}
+    save_json(a.output,result);print(result)
 
-if __name__ == '__main__': main()
+
+if __name__ == '__main__':
+    main()

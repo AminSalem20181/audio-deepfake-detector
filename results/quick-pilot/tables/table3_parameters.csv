@@ -1,0 +1,4 @@
+model,trainable_parameters,reduction_vs_standard_percent,reduction_vs_aasist_percent,source
+SDE-Seg,30434,87.59628630350258,64.32372869434741,logs/parameters.json
+standard_conv_twin,245362,0.0,-187.62572386467542,logs/parameters.json
+AASIST-L,85306,65.23259510437639,0,logs/aasist_parameters.json

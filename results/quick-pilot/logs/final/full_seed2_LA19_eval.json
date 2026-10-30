@@ -1,0 +1,106 @@
+{
+  "identity": {
+    "checkpoint_sha256": "556e4a5477c3373aacdda22088897ff2e59206e2ce60b3c25fda98f3165bf60e",
+    "manifest_sha256": "eaf0f5773d1290d0a0e254709d3837fa74ae2b30f42c1f73177de8ed7a9e4240",
+    "dataset": "LA19_eval",
+    "windowed": false,
+    "explain_samples": 30,
+    "implementation_sha256": "9b24147e27aa35b3b1c06753c9d89f4b5d7a8ff129abdc387ffbe4110e7a8f4e"
+  },
+  "checkpoint": "/content/drive/MyDrive/sde-seg-run/research-v2/quick-pilot/checkpoints/full_seed2/best.pt",
+  "variant": "full",
+  "seed": 2,
+  "count": 1000,
+  "eer_percent": 7.580824972129319,
+  "auc": 0.9771622777110324,
+  "versions": {
+    "python": "3.13.16",
+    "pytorch": "2.11.0+cu130",
+    "cuda": "13.0",
+    "cudnn": 92700,
+    "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+    "packages": {
+      "torchaudio": "2.11.0+cu130",
+      "numpy": "2.1.3",
+      "scipy": "1.16.3",
+      "scikit-learn": "1.6.1",
+      "soundfile": "0.14.0",
+      "pandas": "2.2.3",
+      "fvcore": "0.1.5.post20221221"
+    }
+  },
+  "crop_policy": "centre_4s",
+  "min_tdcf": null,
+  "class_counts": {
+    "bonafide": 103,
+    "spoof": 897
+  },
+  "duration_hours": 0.8831400868055556,
+  "stability": {
+    "0.05": {
+      "count": 30,
+      "mean_abs_difference": 0.024355425592511894,
+      "spearman": 0.9606266998871206,
+      "valid_correlations": 30
+    },
+    "0.1": {
+      "count": 30,
+      "mean_abs_difference": 0.052865072650214034,
+      "spearman": 0.8834551158827466,
+      "valid_correlations": 30
+    },
+    "0.2": {
+      "count": 30,
+      "mean_abs_difference": 0.10079957817991575,
+      "spearman": 0.6444344464406382,
+      "valid_correlations": 30
+    }
+  },
+  "deletion": {
+    "salient": {
+      "5": 0.1218448464687054,
+      "10": 0.186043616097707,
+      "20": 0.277008078705806,
+      "30": 0.33141134163508046
+    },
+    "random": {
+      "5": 0.06613150124366467,
+      "10": 0.12822439005741706,
+      "20": 0.17679802271036002,
+      "30": 0.15844713953825143
+    }
+  },
+  "deletion_spoof_count": 26,
+  "explanation_indices": [
+    719,
+    797,
+    624,
+    552,
+    764,
+    300,
+    956,
+    495,
+    896,
+    392,
+    666,
+    262,
+    925,
+    16,
+    809,
+    537,
+    33,
+    553,
+    729,
+    274,
+    171,
+    637,
+    73,
+    619,
+    596,
+    825,
+    2,
+    497,
+    39,
+    853
+  ]
+}

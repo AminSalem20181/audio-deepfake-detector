@@ -1,0 +1,73 @@
+{
+  "scope": "pilot_subset",
+  "train_samples": 3000,
+  "dev_samples": 1000,
+  "max_epochs": 8,
+  "selected_lambda": 0.01,
+  "label_convention": "spoof=1; bona fide=0",
+  "checkpoints": [
+    {
+      "variant": "full",
+      "seed": 0,
+      "path": "pretrained/full_seed0.pt",
+      "sha256": "6dc2a71072f08e270c719a06b16b26e3fa816a9791b7141a9e999593f41bc6b1",
+      "original_checkpoint": "results/quick-pilot/checkpoints/full_seed0/best.pt"
+    },
+    {
+      "variant": "full",
+      "seed": 1,
+      "path": "pretrained/full_seed1.pt",
+      "sha256": "7a7935c3563ab177bdf62476417b57ca752be2cabb2bc61d4ff0aede3760c609",
+      "original_checkpoint": "results/quick-pilot/checkpoints/full_seed1/best.pt"
+    },
+    {
+      "variant": "full",
+      "seed": 2,
+      "path": "pretrained/full_seed2.pt",
+      "sha256": "556e4a5477c3373aacdda22088897ff2e59206e2ce60b3c25fda98f3165bf60e",
+      "original_checkpoint": "results/quick-pilot/checkpoints/full_seed2/best.pt"
+    },
+    {
+      "variant": "no_segm",
+      "seed": 0,
+      "path": "pretrained/no_segm_seed0.pt",
+      "sha256": "f52455616dd7fc4ffbe154c7b31c20d5e51d2c1d30202d98fd7b8e63e4c4605b",
+      "original_checkpoint": "results/quick-pilot/checkpoints/no_segm_seed0/best.pt"
+    },
+    {
+      "variant": "no_segm",
+      "seed": 1,
+      "path": "pretrained/no_segm_seed1.pt",
+      "sha256": "4b6763cc0e1ce01f749ac980fcb340d6d3c2a23a959ea73aabaf7a2c8dda0cca",
+      "original_checkpoint": "results/quick-pilot/checkpoints/no_segm_seed1/best.pt"
+    },
+    {
+      "variant": "no_segm",
+      "seed": 2,
+      "path": "pretrained/no_segm_seed2.pt",
+      "sha256": "3bbe2222cb6baf7ce32ab538c25e3a0a59c4749d27ebb00a9066395459b674be",
+      "original_checkpoint": "results/quick-pilot/checkpoints/no_segm_seed2/best.pt"
+    },
+    {
+      "variant": "segm_no_stab",
+      "seed": 0,
+      "path": "pretrained/segm_no_stab_seed0.pt",
+      "sha256": "c22ff61c63139394e935ff8c40699601976f9b14fbc1fb77b7eb0dc75158474a",
+      "original_checkpoint": "results/quick-pilot/checkpoints/segm_no_stab_seed0/best.pt"
+    },
+    {
+      "variant": "segm_no_stab",
+      "seed": 1,
+      "path": "pretrained/segm_no_stab_seed1.pt",
+      "sha256": "67fcd743bfa1df71a204d8bd8d500cf45b8738aaf0d0281d0509aa8422511c35",
+      "original_checkpoint": "results/quick-pilot/checkpoints/segm_no_stab_seed1/best.pt"
+    },
+    {
+      "variant": "segm_no_stab",
+      "seed": 2,
+      "path": "pretrained/segm_no_stab_seed2.pt",
+      "sha256": "af5fbe9627d1690b54411c840724cea9e5a89b31980f1a05408cd71356f18f1c",
+      "original_checkpoint": "results/quick-pilot/checkpoints/segm_no_stab_seed2/best.pt"
+    }
+  ]
+}

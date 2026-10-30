@@ -1,0 +1,111 @@
+{
+  "identity": {
+    "checkpoint_sha256": "3bbe2222cb6baf7ce32ab538c25e3a0a59c4749d27ebb00a9066395459b674be",
+    "manifest_sha256": "be301779af309237ab79a07d4556d40a2dff00204b7c99f62711078ed368a16f",
+    "dataset": "ML-ITW",
+    "windowed": true,
+    "explain_samples": 30,
+    "implementation_sha256": "9b24147e27aa35b3b1c06753c9d89f4b5d7a8ff129abdc387ffbe4110e7a8f4e"
+  },
+  "checkpoint": "/content/drive/MyDrive/sde-seg-run/research-v2/quick-pilot/checkpoints/no_segm_seed2/best.pt",
+  "variant": "no_segm",
+  "seed": 2,
+  "count": 1000,
+  "eer_percent": 47.1042471042471,
+  "auc": 0.505291294764979,
+  "versions": {
+    "python": "3.13.16",
+    "pytorch": "2.11.0+cu130",
+    "cuda": "13.0",
+    "cudnn": 92700,
+    "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+    "packages": {
+      "torchaudio": "2.11.0+cu130",
+      "numpy": "2.1.3",
+      "scipy": "1.16.3",
+      "scikit-learn": "1.6.1",
+      "soundfile": "0.14.0",
+      "pandas": "2.2.3",
+      "fvcore": "0.1.5.post20221221"
+    }
+  },
+  "crop_policy": "centre_4s",
+  "min_tdcf": null,
+  "class_counts": {
+    "bonafide": 741,
+    "spoof": 259
+  },
+  "duration_hours": 1.1573666666666669,
+  "windowed": {
+    "eer_percent": 48.262548262548265,
+    "auc": 0.505536189746716,
+    "policy": "mean_probability_complete_nonoverlapping_4s; short_repeat_pad"
+  },
+  "stability": {
+    "0.05": {
+      "count": 30,
+      "mean_abs_difference": 0.020317936843882004,
+      "spearman": 0.9607460383815449,
+      "valid_correlations": 30
+    },
+    "0.1": {
+      "count": 30,
+      "mean_abs_difference": 0.03908646771063407,
+      "spearman": 0.8781065255388535,
+      "valid_correlations": 30
+    },
+    "0.2": {
+      "count": 30,
+      "mean_abs_difference": 0.0661033802976211,
+      "spearman": 0.7196537477151863,
+      "valid_correlations": 30
+    }
+  },
+  "deletion": {
+    "salient": {
+      "5": 0.15160363912582397,
+      "10": 0.3341566100716591,
+      "20": 0.4449712634086609,
+      "30": 0.5091198608279228
+    },
+    "random": {
+      "5": 0.16940859891474247,
+      "10": 0.3072853162884712,
+      "20": 0.26423365995287895,
+      "30": 0.18118925765156746
+    }
+  },
+  "deletion_spoof_count": 8,
+  "explanation_indices": [
+    719,
+    797,
+    624,
+    552,
+    764,
+    300,
+    956,
+    495,
+    896,
+    392,
+    666,
+    262,
+    925,
+    16,
+    809,
+    537,
+    33,
+    553,
+    729,
+    274,
+    171,
+    637,
+    73,
+    619,
+    596,
+    825,
+    2,
+    497,
+    39,
+    853
+  ]
+}

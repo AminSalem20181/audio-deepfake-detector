@@ -1,5 +1,5 @@
-variant,LA19_eval,In-The-Wild,ML-ITW
-full,N/A,N/A,N/A
-no_segm,N/A,N/A,N/A
-segm_no_stab,N/A,N/A,N/A
-AASIST-L,N/A,N/A,N/A
+variant,LA19_eval,In-The-Wild,ML-ITW,protocol
+full,10.063029 ± 2.238533,53.327551 ± 14.990101,47.987606 ± 0.286559,pilot_subset
+no_segm,10.055453 ± 3.106781,59.639180 ± 4.090201,50.356140 ± 2.826827,pilot_subset
+segm_no_stab,10.137351 ± 2.551943,53.439833 ± 13.758934,48.598628 ± 0.604774,pilot_subset
+AASIST-L,N/A,N/A,N/A,pilot_subset

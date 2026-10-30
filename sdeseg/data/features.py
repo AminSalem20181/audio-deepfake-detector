@@ -6,6 +6,8 @@ import torchaudio
 def load_audio(path: str, train: bool = False) -> torch.Tensor:
     wav, sr = sf.read(path, always_2d=False); wav = torch.as_tensor(wav, dtype=torch.float32)
     if wav.ndim == 2: wav = wav.mean(1)
+    if not wav.numel() or not torch.isfinite(wav).all():
+        raise ValueError(f'Empty or non-finite audio: {path}')
     if sr != 16000: wav = torchaudio.functional.resample(wav, sr, 16000)
     peak = wav.abs().max(); wav = wav / peak.clamp_min(1e-8)
     n=64000
@@ -19,6 +21,10 @@ _WINDOW = torch.hann_window(400)
 
 def logmel(path: str, train: bool = False) -> torch.Tensor:
     wav = load_audio(path, train)
+    return waveform_logmel(wav)
+
+def waveform_logmel(wav: torch.Tensor) -> torch.Tensor:
+    """Extract features from a normalised 64,000-sample mono waveform."""
     spec = torch.stft(wav, 512, 160, 400, _WINDOW, center=True, return_complex=True)
     spec = spec[:, :400]
     mel = _MEL(spec.abs().pow(2))

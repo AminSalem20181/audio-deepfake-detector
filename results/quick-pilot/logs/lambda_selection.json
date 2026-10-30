@@ -1,0 +1,26 @@
+{
+  "candidates": [
+    {
+      "lambda_value": 0.0,
+      "best_dev_eer": 0.0958751393534002,
+      "checkpoint": "/content/drive/MyDrive/sde-seg-run/research-v2/quick-pilot/checkpoints/tune_lambda0/best.pt"
+    },
+    {
+      "lambda_value": 0.01,
+      "best_dev_eer": 0.09253065774804903,
+      "checkpoint": "/content/drive/MyDrive/sde-seg-run/research-v2/quick-pilot/checkpoints/tune_lambda0.01/best.pt"
+    },
+    {
+      "lambda_value": 0.1,
+      "best_dev_eer": 0.0970873786407767,
+      "checkpoint": "/content/drive/MyDrive/sde-seg-run/research-v2/quick-pilot/checkpoints/tune_lambda0.1/best.pt"
+    },
+    {
+      "lambda_value": 1.0,
+      "best_dev_eer": 0.1159420289855072,
+      "checkpoint": "/content/drive/MyDrive/sde-seg-run/research-v2/quick-pilot/checkpoints/tune_lambda1/best.pt"
+    }
+  ],
+  "selected_lambda": 0.01,
+  "policy": "Minimum seed-0 subset-dev EER; grid order breaks ties; no final-test selection."
+}

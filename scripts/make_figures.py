@@ -1,10 +1,11 @@
-"""Create explainability figures when a checkpoint and labeled data are available."""
-from pathlib import Path
 import argparse
+from sdeseg.data.dataset import ProtocolDataset, manifest_dataset
+from sdeseg.figures import create_figures
 
-def main() -> None:
-    ap=argparse.ArgumentParser(); ap.add_argument('--output', default='results/figures'); args=ap.parse_args()
-    Path(args.output).mkdir(parents=True, exist_ok=True)
-    print('Figure generation requires a trained checkpoint and dataset-specific file list; no figures fabricated.')
-
-if __name__ == '__main__': main()
+if __name__ == '__main__':
+    ap=argparse.ArgumentParser();ap.add_argument('--checkpoint',required=True)
+    ap.add_argument('--data-root',default='data/raw/LA');ap.add_argument('--manifest')
+    ap.add_argument('--output',default='results/figures')
+    a=ap.parse_args()
+    ds=manifest_dataset(a.manifest) if a.manifest else ProtocolDataset(a.data_root,'eval')
+    create_figures(a.checkpoint,ds,a.output)

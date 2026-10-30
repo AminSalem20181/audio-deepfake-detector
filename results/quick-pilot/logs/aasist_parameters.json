@@ -1,0 +1,75 @@
+{
+  "repository": "https://github.com/clovaai/aasist",
+  "commit": "a04c9863f63d44471dde8a6abcb3b082b07cd1d1",
+  "configuration": {
+    "database_path": "./LA/",
+    "asv_score_path": "ASVspoof2019_LA_asv_scores/ASVspoof2019.LA.asv.eval.gi.trl.scores.txt",
+    "model_path": "./models/weights/AASIST-L.pth",
+    "batch_size": 24,
+    "num_epochs": 100,
+    "loss": "CCE",
+    "track": "LA",
+    "eval_all_best": "True",
+    "eval_output": "eval_scores_using_best_dev_model.txt",
+    "cudnn_deterministic_toggle": "True",
+    "cudnn_benchmark_toggle": "False",
+    "model_config": {
+      "architecture": "AASIST",
+      "nb_samp": 64600,
+      "first_conv": 128,
+      "filts": [
+        70,
+        [
+          1,
+          32
+        ],
+        [
+          32,
+          32
+        ],
+        [
+          32,
+          24
+        ],
+        [
+          24,
+          24
+        ]
+      ],
+      "gat_dims": [
+        24,
+        32
+      ],
+      "pool_ratios": [
+        0.4,
+        0.5,
+        0.7,
+        0.5
+      ],
+      "temperatures": [
+        2.0,
+        2.0,
+        100.0,
+        100.0
+      ]
+    },
+    "optim_config": {
+      "optimizer": "adam",
+      "amsgrad": "False",
+      "base_lr": 0.0001,
+      "lr_min": 5e-06,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "weight_decay": 0.0001,
+      "scheduler": "cosine"
+    }
+  },
+  "source_sha256": "9e0d3e80937dd0577beea7883098465a479da23a198ebc0d712abcc59b0bec50",
+  "config_sha256": "9e2e2610b2260b421bf2083646dde4747a6a5cdd138015066d83bc61b6b214cf",
+  "trainable_parameters": 85306,
+  "total_parameters": 85306,
+  "torch": "2.5.1",
+  "measurement": "Official AASIST-L configuration instantiated on CPU; no training or evaluation"
+}

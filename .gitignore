@@ -24,3 +24,35 @@ results/figures/
 # Local secrets and OS files
 .env
 .DS_Store
+
+# Runtime feature cache and local manifests
+results/cache/
+results/dev_cache/
+data/manifests/
+
+# Compact pilot links, caches and generated run artifacts
+data/pilot-la/
+results/quick-pilot/checkpoints/
+results/quick-pilot/logs/
+results/quick-pilot/figures/
+results/quick-pilot/artifacts/
+
+# Publish selected small checkpoints and the evidence behind pilot tables.
+!pretrained/*.pt
+!results/quick-pilot/logs/
+results/quick-pilot/logs/*
+!results/quick-pilot/logs/final/
+!results/quick-pilot/logs/pilot_config.json
+!results/quick-pilot/logs/experiment_profile.json
+!results/quick-pilot/logs/lambda_selection.json
+!results/quick-pilot/logs/efficiency.json
+!results/quick-pilot/logs/parameters.json
+!results/quick-pilot/logs/aasist_parameters.json
+!results/quick-pilot/logs/local_artifact_verification.json
+!results/quick-pilot/checkpoints/
+results/quick-pilot/checkpoints/*
+!results/quick-pilot/checkpoints/full_seed[012]/
+!results/quick-pilot/checkpoints/no_segm_seed[012]/
+!results/quick-pilot/checkpoints/segm_no_stab_seed[012]/
+results/quick-pilot/checkpoints/*/*
+!results/quick-pilot/checkpoints/*/train.json

@@ -1,0 +1,106 @@
+{
+  "identity": {
+    "checkpoint_sha256": "4b6763cc0e1ce01f749ac980fcb340d6d3c2a23a959ea73aabaf7a2c8dda0cca",
+    "manifest_sha256": "eaf0f5773d1290d0a0e254709d3837fa74ae2b30f42c1f73177de8ed7a9e4240",
+    "dataset": "LA19_eval",
+    "windowed": false,
+    "explain_samples": 30,
+    "implementation_sha256": "9b24147e27aa35b3b1c06753c9d89f4b5d7a8ff129abdc387ffbe4110e7a8f4e"
+  },
+  "checkpoint": "/content/drive/MyDrive/sde-seg-run/research-v2/quick-pilot/checkpoints/no_segm_seed1/best.pt",
+  "variant": "no_segm",
+  "seed": 1,
+  "count": 1000,
+  "eer_percent": 13.592233009708737,
+  "auc": 0.9544544382028555,
+  "versions": {
+    "python": "3.13.16",
+    "pytorch": "2.11.0+cu130",
+    "cuda": "13.0",
+    "cudnn": 92700,
+    "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+    "packages": {
+      "torchaudio": "2.11.0+cu130",
+      "numpy": "2.1.3",
+      "scipy": "1.16.3",
+      "scikit-learn": "1.6.1",
+      "soundfile": "0.14.0",
+      "pandas": "2.2.3",
+      "fvcore": "0.1.5.post20221221"
+    }
+  },
+  "crop_policy": "centre_4s",
+  "min_tdcf": null,
+  "class_counts": {
+    "bonafide": 103,
+    "spoof": 897
+  },
+  "duration_hours": 0.8831400868055556,
+  "stability": {
+    "0.05": {
+      "count": 30,
+      "mean_abs_difference": 0.04146923723941048,
+      "spearman": 0.9237821990169496,
+      "valid_correlations": 30
+    },
+    "0.1": {
+      "count": 30,
+      "mean_abs_difference": 0.08104063061376413,
+      "spearman": 0.7394936367373035,
+      "valid_correlations": 30
+    },
+    "0.2": {
+      "count": 30,
+      "mean_abs_difference": 0.12592626536885898,
+      "spearman": 0.4625061488827587,
+      "valid_correlations": 30
+    }
+  },
+  "deletion": {
+    "salient": {
+      "5": 0.04476839762467604,
+      "10": 0.08293371590284201,
+      "20": 0.12215481927761665,
+      "30": 0.10859081149101257
+    },
+    "random": {
+      "5": -0.0801957524739779,
+      "10": -0.08177959231229928,
+      "20": -0.08187266496511605,
+      "30": -0.08187373326374935
+    }
+  },
+  "deletion_spoof_count": 26,
+  "explanation_indices": [
+    719,
+    797,
+    624,
+    552,
+    764,
+    300,
+    956,
+    495,
+    896,
+    392,
+    666,
+    262,
+    925,
+    16,
+    809,
+    537,
+    33,
+    553,
+    729,
+    274,
+    171,
+    637,
+    73,
+    619,
+    596,
+    825,
+    2,
+    497,
+    39,
+    853
+  ]
+}

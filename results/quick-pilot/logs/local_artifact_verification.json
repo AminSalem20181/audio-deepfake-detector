@@ -1,0 +1,11 @@
+{
+  "final_records": 27,
+  "prediction_files_verified": 27,
+  "checkpoint_identities_verified": 27,
+  "scope": "pilot_subset",
+  "models_trained": 9,
+  "train_files": 3000,
+  "dev_files": 1000,
+  "test_files_per_dataset": 1000,
+  "elapsed_seconds": 1496.4397464429994
+}

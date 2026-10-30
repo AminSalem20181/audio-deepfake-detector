@@ -1,0 +1,4 @@
+device,threads,median_ms,iqr_ms,source
+cpu,1,14.32641799965495,0.6459422488660493,logs/efficiency.json
+cpu,1,14.39943749937811,0.6448660005844431,logs/efficiency.json
+cuda,1,0.968383999861544,0.08187950061255833,logs/efficiency.json
