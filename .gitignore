@@ -56,3 +56,5 @@ results/quick-pilot/checkpoints/*
 !results/quick-pilot/checkpoints/segm_no_stab_seed[012]/
 results/quick-pilot/checkpoints/*/*
 !results/quick-pilot/checkpoints/*/train.json
+results/demo/
+samples/

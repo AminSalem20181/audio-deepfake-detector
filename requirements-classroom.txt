@@ -1,0 +1,4 @@
+# Tested local PyTorch pair; use Python 3.12 for the classroom setup.
+-r requirements.txt
+torch==2.5.1
+torchaudio==2.5.1

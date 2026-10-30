@@ -7,6 +7,15 @@ Lightweight audio deepfake detection with SEGM stability training and spoof-logi
 - [Persian professor briefing, written in first person](docs/PROFESSOR_BRIEF_FA.md): the project from beginning to end, why each step was taken, limitations and likely questions.
 - [Pilot metrics and figures](results/pilot-summary/README_FA.md): Accuracy, Balanced Accuracy, EER, AUC, F1 and confusion matrices from the saved predictions.
 - [Nine published trained checkpoints](pretrained/README.md), with hashes in [manifest.json](pretrained/manifest.json).
+- [Classroom demo on a friend's laptop (Persian)](docs/CLASSROOM_DEMO_FA.md): Windows/macOS/Linux setup, live audio inference and an offline HTML presentation.
+
+Score one WAV/FLAC with the published pilot model, without training or downloading datasets:
+
+```bash
+python scripts/demo_audio.py --audio samples/real.wav --label bonafide --output results/demo/real
+```
+
+Supply your own known speech file; `samples/real.wav` is an example path and raw audio is not bundled. Open `results/demo/real/report.html` in a browser to hear the processed four-second input and view the score and Grad-CAM. The report is self-contained and works offline. The optional label is for display only, not an input to inference or threshold selection. Use the recorded dataset metrics to discuss accuracy rather than a single example.
 
 Reproduce the summary without training or rescoring audio:
 
